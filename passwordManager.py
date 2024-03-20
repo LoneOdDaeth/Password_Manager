@@ -1,4 +1,3 @@
-# istenilen dosyadaki veriyi decrpt etmek için anahtarı da dosyaya kaydedip veriyi almamız lazım
 import os
 import random
 import string
@@ -66,4 +65,4 @@ if choose == 0:
 
 else:
     file = input("Enter the file name: ")
-    print(showPassword(file))
+    print(showPassword(file).decode("utf-8"))
