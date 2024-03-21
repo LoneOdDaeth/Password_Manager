@@ -39,7 +39,7 @@ Bu Python betiği, cryptography kütüphanesinden Fernet şifreleme yöntemini k
 
 Bu proje MIT Lisansı altında lisanslanmıştır - ayrıntılar için (LICENSE) dosyasına bakınız.
 
-## --------------------------------------------------------------------------------------
+## -----------------------------------------------------------------------------------
 
 # Password Manager
 
