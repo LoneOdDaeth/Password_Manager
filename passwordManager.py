@@ -2,48 +2,48 @@ import os
 import random
 import string
 from cryptography.fernet import Fernet
+from test import *
 
-def generateRandomPassword(length): # create the random password
+def generateRandomPassword(length):
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(characters) for i in range(length))
-    # print(password)
 
     return password
 
-def cryptoPassword(length): # encrypt the created password
+def cryptoPassword(length):
     content = generateRandomPassword(length)
-    contentByte = content.encode('utf-8') # Converting incoming data in string structure to byte
-    encryptedContents = Fernet(key).encrypt(contentByte) # This is where the encryption happens
+    contentByte = content.encode('utf-8')
+    encryptedContents = Fernet(key).encrypt(contentByte)
     
-    return encryptedContents.decode('utf-8') # Converting incoming data in byte structure to string and return the string
+    return encryptedContents.decode('utf-8')
 
-def decryptedPassword(content): # decrypt the encrypted password
+def decryptedPassword(content): 
     contentByte = content.encode('utf-8')
     decryptedContents = Fernet(key).decrypt(contentByte).decode()
     returnString = decryptedContents
 
     return returnString
 
-def savePassword(platform, length, key):
+def savePassword(usrData, platform, length, key):
 
     cypherKey = key.decode('utf-8')
     printableData = cryptoPassword(length)
 
-    with open(f"{platform}.key","a") as savePass:
+    with open(f"{usrData}/{platform}.key","a") as savePass:
         savePass.write(cypherKey + "\n" + printableData)
 
-def readPassword(platform):
+def readPassword(usrData, platform):
     lineList = []
-    with open(f"{platform}.key","r") as readable:
+    with open(f"{usrData}/{platform}.key","r") as readable:
         for line in readable:
             lineList.append(line.strip())
 
     decryptedPass = lineList[1]
     return decryptedPass
 
-def showPassword(platform):
+def showPassword(usrData, platform):
         lineList = []
-        with open(f"{platform}.key","r") as readable:
+        with open(f"{usrData}/{platform}.key","r") as readable:
             for line in readable:
                 lineList.append(line.strip())
 
@@ -53,16 +53,19 @@ def showPassword(platform):
         textOrigin = Fernet(readableKey).decrypt(decryptedPass)
         return(textOrigin)
 
-choose = int(input("What do you want? Decrypted[1] or Creat the password[0]."))
-if choose == 0:
-    key = Fernet.generate_key()
-    length = int(input("What is the character length of the password to be created: "))
-    platform = input("For which platform will the password be created: ")
+def interface(username):
+    choose = int(input("Yeni şifre oluşturmak için 0.(sıfır)'ı, Mevcut şifreyi görüntülemek için 1'i tuşlayın: "))
+    if choose == 0:
+        global key
+        key = Fernet.generate_key()
+        length = int(input("Oluşturulacak şifrenin uzunluğunun kaç karakter olmasını istersiniz: "))
+        platform = input("Şifre hangi platform için oluşturulacak: ")
 
-    savePassword(platform, length, key)
-    willDecryptedPass = readPassword(platform)
-    print(decryptedPassword(willDecryptedPass))
+        savePassword(username, platform, length, key)
+        willDecryptedPass = readPassword(username, platform)
+        print(decryptedPassword(willDecryptedPass))
 
-else:
-    file = input("Enter the file name: ")
-    print(showPassword(file).decode("utf-8"))
+    else:
+        file = input("Hangi platformun şifresini görüntülemek istiyorsunuz: ")
+        print(showPassword(username, file).decode("utf-8"))
+        
