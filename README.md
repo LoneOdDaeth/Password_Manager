@@ -8,6 +8,7 @@ Bu Python betiği, cryptography kütüphanesinden Fernet şifreleme yöntemini k
 - Fernet şifreleme kullanarak şifreleri şifreleme.
 - Farklı platformlar için şifreleri şifreli olarak kaydetme.
 - Belirli platformlar için şifreleri geri alıp çözme.
+- Görüntülenen yada oluşturulan şifreleri panoya kopyalama.
 
 ## Gereksinimler
 
@@ -51,6 +52,7 @@ This Python script provides functionalities to generate, encrypt, decrypt, save,
 - Encrypt passwords using Fernet encryption.
 - Save encrypted passwords for different platforms.
 - Retrieve and decrypt passwords for specific platforms.
+- Copy the displayed or generated passwords to the clipboard.
 
 ## Requirements
 
