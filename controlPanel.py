@@ -3,7 +3,7 @@
 import os
 import getpass
 from cryptography.fernet import Fernet
-from passwordManager import *
+import passwordManager as passManage
 
 def makeDir(usrData):
     os.mkdir(usrData)
@@ -60,7 +60,3 @@ def main():
         print("Kullanıcı oluşturuldu")
     else:
         checkUser(username, password)
-        
-if __name__ == "__main__":
-    main()
-    interface(username)

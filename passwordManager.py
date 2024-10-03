@@ -1,8 +1,9 @@
 import os
 import random
 import string
+from pyperclip import copy
 from cryptography.fernet import Fernet
-from test import *
+import controlPanel as control
 
 def generateRandomPassword(length):
     characters = string.ascii_letters + string.digits + string.punctuation
@@ -22,6 +23,7 @@ def decryptedPassword(content):
     decryptedContents = Fernet(key).decrypt(contentByte).decode()
     returnString = decryptedContents
 
+    copy(returnString)
     return returnString
 
 def savePassword(usrData, platform, length, key):
@@ -51,6 +53,7 @@ def showPassword(usrData, platform):
         decryptedPass = lineList[1]
 
         textOrigin = Fernet(readableKey).decrypt(decryptedPass)
+        copy(textOrigin.decode('utf-8'))
         return(textOrigin)
 
 def interface(username):
@@ -64,8 +67,10 @@ def interface(username):
         savePassword(username, platform, length, key)
         willDecryptedPass = readPassword(username, platform)
         print(decryptedPassword(willDecryptedPass))
+        print("Şifre kopyalandı")
 
     else:
         file = input("Hangi platformun şifresini görüntülemek istiyorsunuz: ")
+        print("Şifre kopyalandı")
         print(showPassword(username, file).decode("utf-8"))
         
