@@ -40,6 +40,10 @@ Bu Python betiği, cryptography kütüphanesinden Fernet şifreleme yöntemini k
 
 Bu proje MIT Lisansı altında lisanslanmıştır - ayrıntılar için (LICENSE) dosyasına bakınız.
 
+## Son Sürüm
+
+([Sakha Safe](https://github.com/LoneOdDaeth/Password_Manager/releases))
+
 ---
 
 # Password Manager
@@ -84,3 +88,6 @@ This Python script provides functionalities to generate, encrypt, decrypt, save,
 
 This project is licensed under the MIT License - see the (LICENSE) file for details.
 
+## Latest Version
+
+([Sakha Safe](https://github.com/LoneOdDaeth/Password_Manager/releases))
