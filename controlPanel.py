@@ -1,6 +1,8 @@
 # kullanıcı adını ve şifresini tuttuğumuz dosyayı da şifreleyerek tutucaz
 # şifre kontrolünü yaparken decrypted işlemini gerçekleştirmemiz lazım
 import os
+import sys
+import time
 import getpass
 from cryptography.fernet import Fernet
 import passwordManager as passManage
@@ -33,6 +35,8 @@ def checkUser(usrData, passData):
         checkPass(usrData, passData)
     else:
         print("Kullanıcı ismi bulunamadı.")
+        input()
+        sys.exit()
     
 def checkPass(usrData, passData):
     lineList = []
@@ -46,6 +50,8 @@ def checkPass(usrData, passData):
     
     if passData != originPassword:
         print("Hatalı Şifre!!!")
+        input()
+        sys.exit()
     else:
         print(f"Hoşgeldiniz {usrData}")
 
