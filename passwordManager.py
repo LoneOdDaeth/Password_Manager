@@ -56,6 +56,12 @@ def showPassword(usrData, platform):
         copy(textOrigin.decode('utf-8'))
         return(textOrigin)
 
+def listFile():
+    filelist = []
+    for fileName in os.listdir:
+        filelist.append(filelist)
+    print(filelist)
+
 def interface(username):
     choose = int(input("Yeni şifre oluşturmak için 0.(sıfır)'ı, Mevcut şifreyi görüntülemek için 1'i tuşlayın: "))
     if choose == 0:
@@ -70,6 +76,7 @@ def interface(username):
         print("Şifre kopyalandı")
 
     else:
+        listFile()
         file = input("Hangi platformun şifresini görüntülemek istiyorsunuz: ")
         print("Şifre kopyalandı")
         print(showPassword(username, file).decode("utf-8"))
