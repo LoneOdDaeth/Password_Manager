@@ -42,7 +42,8 @@ Bu proje MIT Lisansı altında lisanslanmıştır - ayrıntılar için (LICENSE)
 
 ## Son Sürüm
 
-([Sakha Safe](https://github.com/LoneOdDaeth/Password_Manager/releases))
+- ([Sürüm Notları](https://github.com/LoneOdDaeth/Password_Manager/releases))
+- ([Sakha Safe](https://github.com/LoneOdDaeth/Password_Manager/releases/download/v2.1.2/Sakha.Safe.exe))
 
 ---
 
@@ -90,4 +91,5 @@ This project is licensed under the MIT License - see the (LICENSE) file for deta
 
 ## Latest Version
 
-([Sakha Safe](https://github.com/LoneOdDaeth/Password_Manager/releases))
+- ([Releases Notes](https://github.com/LoneOdDaeth/Password_Manager/releases))
+- ([Sakha Safe](https://github.com/LoneOdDaeth/Password_Manager/releases/download/v2.1.2/Sakha.Safe.exe))
